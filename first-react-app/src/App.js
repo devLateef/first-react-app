@@ -4,46 +4,56 @@ import './App.css';
 
 function App() {
   let [num, setNum] = useState(0);
-
-  const enterValue = val =>{
-    return val
+  const remove = () => {
+    try {
+      setNum(num.slice(0, -1));
+    } catch (error) {
+      setNum('');
+    }
   }
-  const enterChar = val =>{
-    return val
+  const calculate = ()=>{
+    try {
+      setNum(eval(num))
+    } catch (error) {
+      setNum('Error')
+    }
   }
   return (
     <div className="App">
+      <div>
+        <h3>The Simple Calculator</h3>
+      </div>
       <table id="calcu"> 
         <tr> 
             <td colspan="3"> 
                 <input type="text" id="result" value={num}/> 
             </td> 
-            <td><input type="button" value="c" onClick={()=>setNum(enterValue(0))}/></td> 
+            <td><input type="button" id='reset' value="c/ce" onClick={()=>remove()}/></td> 
         </tr> 
   
         <tr> 
-            <td><input type="button" value="1" onClick={()=>setNum(enterValue(1))}/></td> 
-            <td><input type="button" value="2" onClick={()=>setNum(enterValue(2))}/></td> 
-            <td><input type="button" value="3" onClick={()=>setNum(enterValue(3))}/></td> 
-            <td><input type="button" value="/" onClick={()=>setNum(enterChar('/'))}/></td> 
+            <td><input type="button" value="1" onClick={(e)=>setNum(num + e.target.value)}/></td> 
+            <td><input type="button" value="2" onClick={(e)=>setNum(num + e.target.value)}/></td> 
+            <td><input type="button" value="3" onClick={(e)=>setNum(num + e.target.value)}/></td> 
+            <td><input type="button" value="/" onClick={(e)=>setNum(num + e.target.value)}/></td> 
         </tr> 
         <tr> 
-            <td><input type="button" value="4" onClick={()=>setNum(enterValue(4))}/></td> 
-            <td><input type="button" value="5" onClick={()=>setNum(enterValue(5))}/></td> 
-            <td><input type="button" value="6" onClick={()=>setNum(enterValue(6))}/></td> 
-            <td><input type="button" value="*" onClick={()=>setNum(enterChar('*'))}/></td> 
+            <td><input type="button" value="4" onClick={(e)=>setNum(num + e.target.value)}/></td> 
+            <td><input type="button" value="5" onClick={(e)=>setNum(num + e.target.value)}/></td> 
+            <td><input type="button" value="6" onClick={(e)=>setNum(num + e.target.value)}/></td> 
+            <td><input type="button" value="*" onClick={(e)=>setNum(num + e.target.value)}/></td> 
         </tr> 
         <tr> 
-            <td><input type="button" value="7" onClick={()=>setNum(enterValue(7))}/></td> 
-            <td><input type="button" value="8" onClick={()=>setNum(enterValue(8))}/></td> 
-            <td><input type="button" value="9" onClick={()=>setNum(enterValue(9))}/></td> 
-            <td><input type="button" value="-" onClick={()=>setNum(enterChar('-'))}/></td> 
+            <td><input type="button" value="7" onClick={(e)=>setNum(num + e.target.value)}/></td> 
+            <td><input type="button" value="8" onClick={(e)=>setNum(num + e.target.value)}/></td> 
+            <td><input type="button" value="9" onClick={(e)=>setNum(num + e.target.value)}/></td> 
+            <td><input type="button" value="-" onClick={(e)=>setNum(num + e.target.value)}/></td> 
         </tr> 
         <tr> 
-            <td><input type="button" value="0" onClick={()=>setNum(enterValue(0))}/></td> 
-            <td><input type="button" value="." onClick={()=>setNum(enterChar('.'))}/></td> 
-            <td><input type="button" value="=" onClick={()=>setNum(enterChar('='))}/></td> 
-            <td><input type="button" value="+" onClick={()=>setNum(enterChar('+'))}/></td> 
+            <td><input type="button" value="0" onClick={(e)=>setNum(num + e.target.value)}/></td> 
+            <td><input type="button" value="." onClick={(e)=>setNum(num + e.target.value)}/></td> 
+            <td><input type="button" value="=" onClick={()=>calculate()}/></td> 
+            <td><input type="button" value="+" onClick={(e)=>setNum(num + e.target.value)}/></td> 
         </tr> 
     </table> 
     </div>
