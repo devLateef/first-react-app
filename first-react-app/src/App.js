@@ -1,12 +1,14 @@
-import Calculator from './calculator';
+import Calculator from './calculator/calculator';
+import Product from './product/products';
 import './App.css';
-import React, {useState} from 'react'
+import React from 'react'
 
 function App() {
 
   return (
     <div className="App">
       <Calculator/>
+      <Product/>
     </div>
   )
 }

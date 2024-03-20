@@ -1,0 +1,67 @@
+.product{
+    margin-top: 5rem;
+}
+
+.input{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#name, #price, #quantity{
+    padding: 5px 10px;
+    margin: 0px 5px;
+    width: 20%;
+}
+
+.button{
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem;
+    margin: 0px 5px;
+    background-color: rgb(10, 133, 126);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.display-table{
+    width: 50%;
+    margin: 1rem auto;
+}
+
+.display-table table, .display-table tr, .display-table th, .display-table td{
+    border-collapse: collapse;
+    padding: 1rem;
+}
+
+.display-table table{
+    width: 80%;
+}
+.edit{
+    margin: 0px 10px;
+    background-color: rgb(10, 133, 126);
+}
+
+.edit, .delete{
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+.delete{
+    background-color: red;
+}
+
+.edit-input{
+    width: 50px;
+}
+.error{
+    width: 50%;
+    padding: 1rem;
+    color: red;
+    margin: auto;
+}
