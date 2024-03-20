@@ -54,7 +54,7 @@ function Product(){
                 <button className="button" onClick={addProduct}>Add Product</button>
             </div>
             <div className="display-table">
-                <table border={1}>
+                {allProducts.length ? <table border={1}>
                     <thead>
                         <tr>
                             <th>S/N</th>
@@ -79,6 +79,8 @@ function Product(){
                         ))}
                     </tbody>
                 </table>
+                :
+                <div>No Product Available</div>}
             </div>
         </div>
         </>
