@@ -30,8 +30,10 @@ function App() {
 
   const deleteItem = (ind) => {
     let allItems = [...details];
-    let restItem = allItems.filter((_, i) => i !== ind);
-    setDetails(restItem);
+    if(window.confirm('Are you sure?')===true){
+      let restItem = allItems.filter((_, i) => i !== ind);
+      setDetails(restItem);
+    }
   };
 
   const addValue = () => {
