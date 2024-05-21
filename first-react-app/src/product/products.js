@@ -19,7 +19,7 @@ function Product(){
     const addProduct = ()=>{
         if(name !== '' && price !== '' && quantity !== ''){
             let newProduct = { name, price, quantity }
-            setAllProducts([...allProducts, newProduct])
+            setAllProducts((prev)=>[...prev, newProduct])
             setName('')
             setPrice('')
             setQuantity('')

@@ -2,6 +2,8 @@ import "./App.css";
 import React, { useState } from "react";
 import Main from "./landing-page/landing";
 import { UserForm } from "./landing-page/form";
+import Product from "./product/products";
+import { ApiRequest } from "./API/requestAPI";
 
 function App() {
   let [details, setDetails] = useState([
@@ -37,7 +39,7 @@ function App() {
   };
 
   const addValue = () => {
-    if(name !== '' || quant !== '' || gud !== ''){
+    if(name !== '' && quant !== '' && gud !== ''){
       let allValues = {
         name,
         qty: quant,
@@ -64,7 +66,7 @@ function App() {
         setGud={setGud}
         addValue={addValue}
       />
-      {details.map((item, i) => (
+      {details.length ? details.map((item, i) => (
         <Main
           key={i}
           name={item.name}
@@ -73,7 +75,9 @@ function App() {
           increment={() => increase(i)}
           deleteItem={() => deleteItem(i)}
         />
-      ))}
+      )): 'No Record'}
+      <Product/>
+      <ApiRequest/>
     </div>
   );
 }
